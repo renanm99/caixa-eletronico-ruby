@@ -33,24 +33,25 @@ int main(){
     double latinha = 4.78;
     double troco = valor-latinha;
     int cedula = 0;
+    printf("%f\n",troco);
 
     double a = 100;
     int i = 0;
+
     for(i=0;i<12;i++){
         cedula = troco/a;
-        (int)troco = (int)troco%(int)a;
-        if(a>0){
-            printf("%f",cedula);
-            printf(" cedulas de R$%f",a,",00");
-            printf("\n");
-            if(a==50 || a == 5 || a == 0.25){
-                a/=2.5;
-                continue;
-            }else if(a==0.05){
-                a/=5;
-                continue;
-            }
+
+        troco = (int)troco%(int)a;
+        printf("%d",cedula);
+        printf(" cedulas de R$%f",a,",00");
+        printf("\n");
+
+        if(a==50 || a == 5 || a == 0.25){
+            a/=2.5;
+            continue;
         }
-        a/=2;
+
+        a/=2.0;
     }
 }
+
